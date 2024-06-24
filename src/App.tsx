@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import { User } from "./interfaces/User";
 
@@ -16,15 +17,30 @@ const userInfor: User = {
 	gender: "Male",
 };
 
+// ! props = properties
+
+type Props = { name: string; age: number };
+const Hello = (props: Props) => {
+	return (
+		<h1>
+			Hello {props.name} - {props.age} tuổi
+		</h1>
+	);
+};
+
+/**
+ * Tạo nút bấm sử dụng useState để thay đổi theme của trang web.
+ */
+
 function App() {
 	return (
 		<>
-			<h2>Name: {userInfor.userName}</h2>
-			<p> Age: {userInfor.age}</p>
-			<p> address: {userInfor.address}</p>
-			<p> gender: {userInfor.gender}</p>
-			<p> major: {userInfor.major}</p>
-			<p> email: {userInfor.email}</p>
+			{/* {Component Hello} */}
+			<Hello name={"Hoang"} age={18} />
+			<Hello name={"Chung"} age={20} />
+
+			{/* Hàm Hello */}
+			{/* {Hello("Hoang")}  */}
 		</>
 	);
 }
