@@ -48,13 +48,18 @@ const Hello = (props: Props) => {
 /** state = trang thai cua du lieu */
 
 function App() {
-	const [isDark, setIsDark] = useState(false);
+	const initialTheme = localStorage.getItem("theme") === "false" ? false : true;
+	const [isDark, setIsDark] = useState(initialTheme);
 	useEffect(() => {
-		// code logic
+		if (isDark) {
+			document.body.classList.remove("dark");
+		} else {
+			document.body.classList.add("dark");
+		}
 	}, [isDark]);
 	const handleSetTheme = () => {
-		console.log(1);
 		setIsDark(!isDark);
+		localStorage.setItem("theme", isDark ? "true" : "false");
 	};
 	return (
 		<>
