@@ -1,24 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 const Header = () => {
 	return (
 		<header>
 			<ul>
 				<li>
-					<Link to="/">Home</Link>
+					<Link to='/'>Home</Link>
 				</li>
 				<li>
-					<Link to="/login">Login</Link>
+					<Link to='/login'>Login</Link>
 				</li>
 				<li>
-					<Link to="/register">Register</Link>
+					<Link to='/register'>Register</Link>
 				</li>
 				<li>
-					<Link to="/admin">You are admin?</Link>
+					<Link to='/admin'>You are admin?</Link>
 				</li>
 			</ul>
 		</header>
-	);
-};
+	)
+}
 
-export default Header;
+export default Header

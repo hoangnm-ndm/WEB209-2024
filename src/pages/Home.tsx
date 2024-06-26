@@ -1,9 +1,8 @@
-import React from "react";
-import { Product } from "../interfaces/Product";
+import { Product } from '../interfaces/Product'
 
 type Props = {
-	products: Product[];
-};
+	products: Product[]
+}
 
 const Home = ({ products }: Props) => {
 	return (
@@ -15,7 +14,7 @@ const Home = ({ products }: Props) => {
 				</div>
 			))}
 		</div>
-	);
-};
+	)
+}
 
-export default Home;
+export default Home
