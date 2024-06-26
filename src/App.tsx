@@ -1,46 +1,37 @@
-import React from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { User } from "./interfaces/User";
-
-/**
- * ! Tao ra object userInfor chua thong tin ca nhan (ten, tuoi, que quan, email, GPA, major, gender, hobbies, ... ) va in ra man hinh!
- */
-
-const userInfor: User = {
-	userName: "Nguyen Minh Hoang",
-	age: 18,
-	email: "hoangnm62@fe.edu.vn",
-	GPA: 3.5,
-	address: "Bắc Giang",
-	major: "Software Engineering",
-	password: "123456789",
-	gender: "Male",
-};
-
-// ! props = properties
-
-type Props = { name: string; age: number };
-const Hello = (props: Props) => {
-	return (
-		<h1>
-			Hello {props.name} - {props.age} tuổi
-		</h1>
-	);
-};
-
-/**
- * Tạo nút bấm sử dụng useState để thay đổi theme của trang web.
- */
+import Footer from "./components/layouts/Footer";
+import Header from "./components/layouts/Header";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Notfound from "./pages/Notfound";
+import { useEffect, useState } from "react";
+import instance from "./apis";
 
 function App() {
+	const [products, setProducts] = useState([]);
+	useEffect(() => {
+		const fetchAPI = async () => {
+			const { data } = await instance.get("/products");
+			setProducts(data);
+		};
+
+		fetchAPI();
+	}, []);
 	return (
 		<>
-			{/* {Component Hello} */}
-			<Hello name={"Hoang"} age={18} />
-			<Hello name={"Chung"} age={20} />
+			<Header />
+			<main id="main" className="container">
+				<Routes>
+					<Route index element={<Home products={products} />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/register" element={<Register />} />
+					<Route path="*" element={<Notfound />} />
+				</Routes>
+			</main>
 
-			{/* Hàm Hello */}
-			{/* {Hello("Hoang")}  */}
+			<Footer />
 		</>
 	);
 }
