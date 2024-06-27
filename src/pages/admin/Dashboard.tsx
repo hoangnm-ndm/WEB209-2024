@@ -1,22 +1,13 @@
-import { useEffect, useState } from "react";
-import { instance } from "../../api";
-import { Product } from "../../interfaces/Product";
 import { Link } from "react-router-dom";
+import { Product } from "../../interfaces/Product";
 
-const Dashboard = () => {
-	const [products, setProducts] = useState<Product[]>([]);
+// props = propeties
 
-	useEffect(() => {
-		(async () => {
-			const { data } = await instance.get(`/products`);
-			setProducts(data);
-		})();
-	}, []);
-
-	const handleRemove = (id: any) => {
-		console.log(id);
-	};
-
+interface Props {
+	products: Product[];
+	onRemove: (id: any) => void;
+}
+const Dashboard = ({ products, onRemove }: Props) => {
 	return (
 		<div>
 			<h1>Hello Admin</h1>
@@ -41,7 +32,7 @@ const Dashboard = () => {
 								<Link to={`/product-edit/${item.id}`} className="btn btn-warning">
 									Edit
 								</Link>
-								<button className="btn btn-danger" onClick={() => handleRemove(item.id)}>
+								<button className="btn btn-danger" onClick={() => onRemove(item.id)}>
 									Remove
 								</button>
 							</td>
