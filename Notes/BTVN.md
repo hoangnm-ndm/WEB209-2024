@@ -1,2 +1,6 @@
-- Xây dựng trang Admin dạng bảng product có id, title, price, thumbnail, description và các nút bấm sửa, xoá tương ứng từng sản phẩm.
-  26/6/2024
+- CRUD product hoàn thiện
+- Validation form với zod: title tối thiếu 6 ký tự, giá không âm.
+
++-2 điểm
+
+26/6/2024
