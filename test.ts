@@ -3,12 +3,12 @@
 		// cap nhat lai component ma chua state bi thay doi!
 	}
 	const useState = (initState: any) => {
-		let state = initState;
+		let state = initState
 		function setState(newState) {
-			state = newState;
-			reRender();
+			state = newState
+			reRender()
 		}
-		return [state, setState];
-	};
-	const [products, setProducts] = useState([]);
+		return [state, setState]
+	}
+	const [products, setProducts] = useState([])
 }
