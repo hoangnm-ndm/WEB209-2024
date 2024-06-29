@@ -11,6 +11,7 @@ const Dashboard = ({ products, onRemove }: Props) => {
 	return (
 		<div>
 			<h1>Hello Admin</h1>
+			<Link to="/admin/product-add" className="btn btn-primary">Them san pham</Link>
 			<table className="table table-bodered table-striped text-center">
 				<thead>
 					<tr>

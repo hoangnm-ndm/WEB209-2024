@@ -1495,6 +1495,18 @@
         "https://cdn.dummyjson.com/products/images/groceries/Kiwi/1.png"
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Kiwi/thumbnail.png"
+    },
+    {
+      "title": "san pham moi",
+      "price": 32323,
+      "description": "2323233",
+      "id": 31
+    },
+    {
+      "title": "them san pham 2024",
+      "price": 200,
+      "description": "mo ta",
+      "id": 32
     }
   ]
 }
